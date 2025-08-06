@@ -1,69 +1,89 @@
 * {
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
 }
 
 .page {
-    height: 100vh;
+  height: 100vh;
 }
 
 #pageLogin {
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
 }
 
 #inputLogin {
-    width: 100%;
-    max-width: 400px;
-    border: 2px solid black;
-    background-color: lightgray;
-    outline: 0px;
-    border-radius: 5px;
-    padding: 5px;
-    font-size: 18px;
+  width: 100%;
+  max-width: 400px;
+  border: 2px solid black;
+  background-color: lightgray;
+  outline: 0px;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 18px;
 }
 
 #pageChat {
-    display: flex;
-    flex-direction: column;
+  display: none;
+  flex-direction: column;
 }
 
 .pageChatArea {
-    /* background-color: red; */
-    display: flex;
-    flex: 1;
+  /* background-color: red; */
+  display: flex;
+  flex: 1;
 }
 
 .pageChatInput {
-    height: 60px;
-
+  height: 60px;
 }
 
 #pageChatInputText {
-    width: 100%;
-    height: 60px;
-    padding: 20px;
-    font-size: 18px;
-    outline: 0px;
-    border: 0px;
-    background-color: #CCC;
+  width: 100%;
+  height: 60px;
+  padding: 20px;
+  font-size: 18px;
+  outline: 0px;
+  border: 0px;
+  background-color: #ccc;
 }
 
 .pageChatAreaChatList {
-    flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  gap: 10px;
+  flex: 1;
+  overflow-y: scroll;
+  height: calc(100vh - 60px);
 }
 
 .pageChatAreaUserList {
-    padding: 20px;
-    display: flex;
-    gap: 10px;
-    overflow-y: scroll;
-    height: calc(100vh - 60px);
-    flex-direction: column;
-    background-color: #CCC;
-    width: 15%;
+  padding: 20px;
+  display: flex;
+  gap: 10px;
+  overflow-y: scroll;
+  height: calc(100vh - 60px);
+  flex-direction: column;
+  background-color: #ccc;
+  width: 15%;
+}
+
+.system-message {
+  color: gray;
+  font-style: italic;
+}
+
+.me-message > span {
+  color: red;
+  font-weight: bold;
+}
+
+.user-message > span {
+  color: blue;
+  font-weight: bold;
 }

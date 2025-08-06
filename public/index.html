@@ -1,56 +1,33 @@
 <!DOCTYPE html>
 <html lang="pt_BR">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Chat</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<body>
+  <body>
     <div class="page" id="pageLogin">
-        <h1>Qual seu nome ?</h1>
-        <input type="text" id="inputLogin">
+      <h1>Qual seu nome ?</h1>
+      <input type="text" id="inputLogin" />
     </div>
 
     <div class="page" id="pageChat">
-        <div class="pageChatArea">
-            <div class="pageChatAreaChatList"></div>
-            <div class="pageChatAreaUserList">
-                <div>Lucas (Você)</div>
-                <div>Gabriel</div>
-                <div>Fernanda</div>
-                <div>Lucas (Você)</div>
-                <div>Gabriel</div>
-                <div>Fernanda</div>
-                <div>Lucas (Você)</div>
-                <div>Gabriel</div>
-                <div>Fernanda</div>
-                <div>Lucas (Você)</div>
-                <div>Gabriel</div>
-                <div>Fernanda</div>
-                <div>Lucas (Você)</div>
-                <div>Gabriel</div>
-                <div>Fernanda</div>
-                <div>Lucas (Você)</div>
-                <div>Gabriel</div>
-                <div>Fernanda</div>
-                <div>Lucas (Você)</div>
-                <div>Gabriel</div>
-                <div>Fernanda</div>
-                <div>Lucas (Você)</div>
-                <div>Gabriel</div>
-                <div>Fernanda</div>
-                <div>Lucas (Você)</div>
-                <div>Gabriel</div>
-                <div>Fernanda</div>
-            </div>
-        </div>
-        <div class="pageChatInput">
-            <input type="text" id="pageChatInputText" placeholder="Digite uma mensagem (e aperte ENTER)">
-        </div>
+      <div class="pageChatArea">
+        <div class="pageChatAreaChatList"></div>
+        <div class="pageChatAreaUserList"></div>
+      </div>
+      <div class="pageChatInput">
+        <input
+          type="text"
+          id="pageChatInputText"
+          placeholder="Digite uma mensagem (e aperte ENTER)"
+        />
+      </div>
     </div>
-</body>
 
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/main.js"></script>
+  </body>
 </html>
