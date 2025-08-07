@@ -29,7 +29,7 @@ function addMessage(type, user, msg) {
             div.innerHTML += `<div class="system-message">${msg}</div>`;
             break;
         case 'msg':
-            div.innerHTML += `<div class="user-message"><span>${user}</span>${msg}</div>`;
+            div.innerHTML += `<div class="user-message"><span>${user}: </span>${msg}</div>`;
             break;
     }
 }
@@ -41,6 +41,17 @@ inputNameLogin.addEventListener('keyup', (e) => {
             username = name;
             document.title = `Chat (${username})`;
             socket.emit('join-request', username);
+        }
+    }
+})
+
+inputTextChat.addEventListener('keyup', (e) => {
+    if (e.keyCode === 13) {
+        let txt = inputTextChat.value.trim();
+        inputTextChat.value = '';
+        if (txt != '') {
+            addMessage('msg', username, txt);
+            socket.emit('send-msg', txt);
         }
     }
 })
@@ -67,4 +78,8 @@ socket.on('list-update', (data) => {
 
     userList = data.list;
     renderUserList();
+})
+
+socket.on('show-msg', (data) => {
+    addMessage('msg', data.username, data.message);
 })
